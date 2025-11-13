@@ -1,7 +1,7 @@
 {
-  "name": "class-16",
+  "name": "my-react-todo-redux-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
