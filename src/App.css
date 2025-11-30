@@ -1,42 +1,36 @@
+/**
+ * App-specific styles
+ * Minimal overrides - most styling done via Tailwind utilities
+ */
+
+/* Root container optimization */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Improve text rendering */
+.app-container {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Touch action optimization for mobile */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  [role="button"] {
+    touch-action: manipulation;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  body {
+    background: white !important;
+  }
 }
